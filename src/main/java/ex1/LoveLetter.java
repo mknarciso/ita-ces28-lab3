@@ -1,6 +1,6 @@
 package ex1;
 
-public class LoveLetter extends Letter{
+public class LoveLetter extends Letter implements LetterBuilder{
     protected String city_;
     LoveLetter(Person sender, Person destinatary,
     String city, String content, Date date) {
@@ -10,16 +10,16 @@ public class LoveLetter extends Letter{
     public String model() {
     return header() + body() + conclusion() + signature();
     }
-    protected String header() {
+    public String header() {
     return city_ + ", " + date_.toPrint() + "\n\n";
     }
-    protected String body() {
+    public String body() {
     return "Dear " + destinatary_.name() + ",\n" + content_ + "\n";
     }
-    protected String conclusion() {
+    public String conclusion() {
     return "\nWith love,\n";
     }
-    protected String signature() {
+    public String signature() {
     return "\n           " + sender_.name();
     }
 }

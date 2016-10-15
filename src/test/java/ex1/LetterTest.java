@@ -12,7 +12,7 @@ public class LetterTest {
     Person f1 = new Person("Marta","marta@mail.com","9999-8888");
     Person f2 = new Person("Joana","joana@mail.com","9999-0000");
     Person f3 = new Person("Maria","maria@mail.com","9999-0000");
-    Date date = new Date(15,10,2016);
+    Date date = new Date("15/10/2016");
     Address senderAddr = new Address("H9C 402");
     Address receiverAddr = new Address("H8A 112");
     String content = "Here goes all the content of the letter. It doesn`t matter the language its written.";

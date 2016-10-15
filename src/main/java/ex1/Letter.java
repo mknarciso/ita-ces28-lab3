@@ -6,7 +6,6 @@ public abstract class Letter {
     protected String body_;
     protected String conclusion_;
     protected String signature_;
-    protected WriteAPI writeAPI_;
     protected Letter(Person sender, Person destinatary, Date date){
         date_ = date;
         sender_ = sender;

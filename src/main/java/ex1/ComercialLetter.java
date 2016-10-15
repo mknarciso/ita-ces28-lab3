@@ -1,9 +1,12 @@
 package ex1;
 
 class ComercialLetter extends Letter{
+    protected Address addressSender_, addressDestiny_;
     ComercialLetter(Person sender, Person destinatary,
     Address addressSender, Address addressDestiny, Date date) {
-    // armazena todos os dados necessarios
+        super(sender, destinatary,date);
+        addressSender_ = addressSender;
+        addressDestiny_ = addressDestiny;
     }
     public String model() {
     return header() + body() + conclusion() + signature();
@@ -22,8 +25,8 @@ class ComercialLetter extends Letter{
     }
     protected String signature() {
     return "\n\n __________________\n"
-    + sender_.name() + "\n " + sender.phone().toPrint() +
-    "\n email:" + sender.email();
+    + sender_.name() + "\n " + sender_.phone() +
+    "\n email:" + sender_.email();
     //espaços representam justificação à direita.keep it simple!
     }
 }//class Commercial Letter

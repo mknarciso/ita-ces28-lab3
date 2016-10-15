@@ -1,11 +1,11 @@
 package ex1;
 
 public class Address {
-    protected String main;
+    protected String main_;
     public Address (String main){
-        this.main = main;
+        main_ = main;
     }
     public String toPrint(){
-        return main;
+        return main_;
     }
 }

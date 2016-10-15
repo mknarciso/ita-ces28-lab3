@@ -1,13 +1,11 @@
 package ex1;
 
 public class Date {
-    protected int day, month, year;
-    public Date(int d, int m, int y){
-        day = d;
-        month = m;
-        year = y;
+    protected String date_;
+    public Date(String date){
+        date_ = date;
     }
     public String toPrint(){
-        return day + "/" + month + "/" + year;
+        return date_;
     }
 }

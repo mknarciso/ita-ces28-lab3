@@ -6,9 +6,9 @@ import org.junit.*;
 
 public class LetterTest {
     
-    Person sender = new Person("João","joao@gmail.com","3333-1222");
-    Person receiver = new Person("Marcos","marcos@gmail.com","9999-1222");
-    Date date = new Date(15,10,2016);
+    Person sender = new Person("João","joao@gmail.com","3333-1222", "Sr");
+    Person receiver = new Person("Marcos","marcos@gmail.com","9999-1222", "Mr");
+    Date date = new Date("15/10/2016");
     Address senderAddr = new Address("H9C 402");
     Address receiverAddr = new Address("H8A 112");
     String content = "Here goes all the content of the letter. It doesn`t matter the language its written.";

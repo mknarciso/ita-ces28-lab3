@@ -5,27 +5,29 @@ import org.junit.*;
 
 
 public class LetterTest {
-    
-    Person p1 = new Person("João","joao@gmail.com","3333-1222");
-    Person p2 = new Person("Marcos","marcos@gmail.com","9999-1222");
-    Person p3 = new Person("Paulo","paulo@gmail.com","9999-1222");
-    Person f1 = new Person("Marta","marta@mail.com","9999-8888");
-    Person f2 = new Person("Joana","joana@mail.com","9999-0000");
-    Person f3 = new Person("Maria","maria@mail.com","9999-0000");
-    Date date = new Date(15, 10, 2016);
-    Address senderAddr = new Address("H9C 402");
-    Address receiverAddr = new Address("H8A 112");
+    Person pFactory = new PortuguesePerson();
+    Person p1 = pFactory.generatePerson("João","joao@gmail.com","1233331222");
+    Person p2 = pFactory.generatePerson("Marcos","marcos@gmail.com","1299991222");
+    Person p3 = pFactory.generatePerson("Paulo","paulo@gmail.com","1299991222");
+    Person f1 = pFactory.generatePerson("Marta","marta@mail.com","1299998888");
+    Person f2 = pFactory.generatePerson("Joana","joana@mail.com","1299990000");
+    Person f3 = pFactory.generatePerson("Maria","maria@mail.com","1299990000");
+    Date dFactory = new PortugueseDate();
+    Date date = dFactory.generateDate(15, 10, 2016);
+    Address addressFactory = new PortugueseAddress();
+    Address senderAddr = addressFactory.generateAddress("H9C 402");
+    Address receiverAddr = addressFactory.generateAddress("H8A 112");
     String content = "Here goes all the content of the letter. It doesn`t matter the language its written.";
     String result1 = 
     "15/10/2016\n\n" +
-    "From: \n  João\n  H9C 402\n" + 
-    "To: \n  Marcos\n  H8A 112\n\n" + 
+    "From: \n  João\n  Rua H9C 402\n" + 
+    "To: \n  Marcos\n  Rua H8A 112\n\n" + 
     "Dear Marcos,\n" + 
     content + "\n" +
     "\nSincerely,\n" +
     "\n\n __________________\n" +
     " João\n" + 
-    " 3333-1222\n"+
+    " (12) 3333-1222\n"+
     " email:" + "joao@gmail.com";
     String city = "São José dos Campos";
     String loveResult = "São José dos Campos, 15/10/2016\n\n" +

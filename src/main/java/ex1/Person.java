@@ -3,7 +3,7 @@ package ex1;
 public abstract class Person {
     protected String name_, email_;
     protected PhoneNumber phoneNumber_, phoneNumberPrototype_;
-    
+ 
     
     public String name(){
         return name_;

@@ -1,11 +1,11 @@
 package lab3;
 
-public class Address {
+public abstract class Address {
     protected String main_;
-    public Address (String main){
-        main_ = main;
-    }
+    
     public String toPrint(){
         return main_;
     }
+    
+    abstract Address generateAddress(String main);
 }

@@ -1,13 +1,10 @@
 package lab3;
 
-public class Person {
-    protected String name_, email_, phone_, treatment_;
-    public Person (String name, String email, String phone, String treatment ){
-        name_ = name;
-        email_ = email;
-        phone_ = phone;
-        treatment_ = treatment;
-    }
+public abstract class Person {
+    protected String name_, email_;
+    protected PhoneNumber phoneNumber_, phoneNumberPrototype_;
+ 
+    
     public String name(){
         return name_;
     }
@@ -15,10 +12,15 @@ public class Person {
         return email_;
     }
     public String phone(){
-        return phone_;
+        return phoneNumber_.getPhone();
     }
     
-    public String treatment() {
-    	return treatment_;
-    }
+    abstract Person generatePerson(String name, String email, String phone);
+    
+    public void setPhoneConfiguration(PhoneNumber phone) {
+    	String stringPhone = phoneNumber_.inputPhone_;
+		phoneNumberPrototype_ = phone;		
+		phoneNumber_ = phoneNumberPrototype_.generatePhone(stringPhone);
+	}
+
 }

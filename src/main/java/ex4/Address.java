@@ -1,6 +1,6 @@
 package ex4;
 
-public abstract class Address {
+public abstract class Address implements Cloneable {
     protected String main_;
     
     public String toPrint(){
@@ -8,4 +8,8 @@ public abstract class Address {
     }
     
     abstract Address generateAddress(String main);
+    
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

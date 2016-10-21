@@ -1,6 +1,6 @@
 package ex4;
 
-public abstract class Person {
+public abstract class Person implements Cloneable {
     protected String name_, email_;
     protected PhoneNumber phoneNumber_, phoneNumberPrototype_;
  
@@ -20,7 +20,16 @@ public abstract class Person {
     public void setPhoneConfiguration(PhoneNumber phone) {
     	String stringPhone = phoneNumber_.inputPhone_;
 		phoneNumberPrototype_ = phone;		
-		phoneNumber_ = phoneNumberPrototype_.generatePhone(stringPhone);
+		try {
+			phoneNumber_ = (PhoneNumber) phoneNumberPrototype_.generatePhone(stringPhone).clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+    
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
 }

@@ -10,21 +10,19 @@ public class FactoryTests {
 	@Test
     public void createEnglishPerson(){
 		idiomFactory_ = FactoryMaker.getFactory("english");		
-		Person personEnglish = idiomFactory_.createPerson("Smith", "smith@ita.br", "99999-9999");
-		assertEquals(personEnglish.treatment(), "Mr");		
+		Person personEnglish = idiomFactory_.createPerson("Smith", "smith@ita.br", "99999-9999");	
 		assertEquals(personEnglish.email(), "smith@ita.br");		
 		assertEquals(personEnglish.phone(), "99999-9999");		
-		assertEquals (personEnglish.name(), "Smith");        
+		assertEquals (personEnglish.name(), "Mr Smith");        
     }
 	
 	@Test
     public void createPortuguesePerson(){
 		idiomFactory_ = FactoryMaker.getFactory("portuguese");		
-		Person personPortuguese = idiomFactory_.createPerson("Smith", "smith@ita.br", "99999-9999");		
-		assertEquals(personPortuguese.treatment(), "Sr");		
+		Person personPortuguese = idiomFactory_.createPerson("Smith", "smith@ita.br", "99999-9999");				
 		assertEquals(personPortuguese.email(), "smith@ita.br");		
 		assertEquals(personPortuguese.phone(), "99999-9999");		
-		assertEquals (personPortuguese.name(), "Smith");
+		assertEquals (personPortuguese.name(), "Sr Smith");
         
     }
 	

@@ -1,12 +1,12 @@
 package ex1;
 
 public class Person {
-    protected String name_, email_, phone_, treatment_;
-    public Person (String name, String email, String phone, String treatment ){
+    protected String name_, email_;
+    PhoneNumber phoneNumber_;
+    public Person (String name, String email, String phone){
         name_ = name;
         email_ = email;
-        phone_ = phone;
-        treatment_ = treatment;
+        phoneNumber_ = new EnglishPhoneNumber(phone);
     }
     public String name(){
         return name_;
@@ -15,10 +15,6 @@ public class Person {
         return email_;
     }
     public String phone(){
-        return phone_;
-    }
-    
-    public String treatment() {
-    	return treatment_;
+        return phoneNumber_.getPhone();
     }
 }

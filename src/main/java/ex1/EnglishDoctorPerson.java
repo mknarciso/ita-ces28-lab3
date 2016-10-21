@@ -1,14 +1,14 @@
 package ex1;
 
-public class EnglishPerson extends Person {
+public class EnglishDoctorPerson extends Person {
 
-	
-	public EnglishPerson() {
-		phoneNumberPrototype_ = new EnglishPhoneNumber();
+
+	public EnglishDoctorPerson() {
+		 phoneNumberPrototype_ = new EnglishPhoneNumber();
 	}
 	public Person generatePerson(String name, String email, String phone) {
-		name_ = "Mr " + name;
-		email_ = email;
+		name_ = "Dr " + name;
+		email_ = email + " and " + name + "@university.edu";
 		phoneNumber_ = phoneNumberPrototype_.generatePhone(phone);
 		return this;
 	}

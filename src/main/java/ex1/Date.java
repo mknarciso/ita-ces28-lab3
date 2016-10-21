@@ -1,12 +1,9 @@
 package ex1;
 
-public class Date {
+public abstract class Date {
     protected int day_, month_, year_;
-    public Date(int day, int month,int  year){
-        day_ = day;
-        month_ = month;
-        year_ = year;
-    }
+    
+    abstract Date generateDate(int day, int month, int year);
     
     public String toPrint() {
     	return day_ + "/" +  month_ + "/"+  year_;

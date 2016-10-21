@@ -1,13 +1,10 @@
 package ex1;
 
-public class Person {
+public abstract class Person {
     protected String name_, email_;
-    PhoneNumber phoneNumber_;
-    public Person (String name, String email, String phone){
-        name_ = name;
-        email_ = email;
-        phoneNumber_ = new EnglishPhoneNumber(phone);
-    }
+    protected PhoneNumber phoneNumber_, phoneNumberPrototype_;
+    
+    
     public String name(){
         return name_;
     }
@@ -17,4 +14,13 @@ public class Person {
     public String phone(){
         return phoneNumber_.getPhone();
     }
+    
+    abstract Person generatePerson(String name, String email, String phone);
+    
+    public void setPhoneConfiguration(PhoneNumber phone) {
+    	String stringPhone = phoneNumber_.inputPhone_;
+		phoneNumberPrototype_ = phone;		
+		phoneNumber_ = phoneNumberPrototype_.generatePhone(stringPhone);
+	}
+
 }

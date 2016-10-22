@@ -1,7 +1,7 @@
 package ex3;
 
 public class Person {
-    protected String name_, email_, phone_, treatment_;
+    private String name_, email_, phone_, treatment_;
     public Person (String name, String email, String phone, String treatment ){
         name_ = name;
         email_ = email;

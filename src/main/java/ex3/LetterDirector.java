@@ -9,6 +9,8 @@ public class LetterDirector {
         	letter = new ComercialLetter();
         } else if(type=="LoveLetter"){
         	letter = new LoveLetter();
+        } else if(type=="WeddingInviteLetter"){
+        	letter = new WeddingInviteLetter();
         }else{
         	System.out.println("Tipo de Carta inválida!");
         }
@@ -41,6 +43,16 @@ public class LetterDirector {
 	}
 	public void addCity(String city) {
 		letter.addCity(city);	
+	}
+	public void addRelatives(String groomName, String brideFatherName, String brideMotherName, String groomFatherName, String groomMotherName) {
+		letter.addRelatives(
+				idiomFactory_.createPerson(groomName,"",""),
+				idiomFactory_.createPerson(brideFatherName,"",""),
+				idiomFactory_.createPerson(brideMotherName,"",""),
+				idiomFactory_.createPerson(groomFatherName,"",""),
+				idiomFactory_.createPerson(groomMotherName,"","")
+				);
+		
 	}
 
 

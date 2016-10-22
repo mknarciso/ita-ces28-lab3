@@ -11,4 +11,6 @@ public interface LetterBuilder {
     public void setDate(Date date);
 	public void addContent(String content);
 	public void addCity(String city);
+	public void addRelatives(Person groomName, Person brideFatherName, Person brideMotherName, 
+			Person groomFatherName, Person groomMotherName);
 }

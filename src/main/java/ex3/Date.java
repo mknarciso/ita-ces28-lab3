@@ -1,7 +1,7 @@
 package ex3;
 
 public class Date {
-    protected String date_;
+    private String date_;
     public Date(String date){
         date_ = date;
     }

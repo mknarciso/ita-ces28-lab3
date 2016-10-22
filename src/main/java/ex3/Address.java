@@ -1,7 +1,7 @@
 package ex3;
 
 public class Address {
-    protected String main_;
+    private String main_;
     public Address (String main){
         main_ = main;
     }

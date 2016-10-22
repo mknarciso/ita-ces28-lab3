@@ -58,4 +58,30 @@ public class MergeTests {
 		//System.out.println(diretor.printLetter());
 		assertEquals(loveResultPT,diretor.printLetter());
     }
+    @Test
+    public void WeddingInviteLetterWithIdiom(){
+        String inviteResult = "To:\n  Mr João\n  Street H8A 112\n\nWe are honored to invite you to the wedding of our sons\n"
+        	    + "  Maria & Paulo\n\n The cerimony will be at \nStreet H9C 402 on 10/15/2016\n\n"
+        	    + "Please confirm your presence:9999-0000\n\n __________________\n João, Marta, Marcos and Joana.";
+	    String inviteResultPT = "To:\n  Sr João\n  Rua H8A 112\n\nWe are honored to invite you to the wedding of our sons\n"
+	    	    + "  Maria & Paulo\n\n The cerimony will be at \nRua H9C 402 on 15/10/2016\n\n"
+	    	    + "Please confirm your presence:9999-0000\n\n __________________\n João, Marta, Marcos and Joana.";
+	
+ 
+	    LetterDirector director = new LetterDirector("WeddingInviteLetter","english");
+		director.addSender("Maria","maria@mail.com","9999-0000","H9C 402");
+		director.addRelatives("Paulo","João","Marta","Marcos","Joana");
+		director.addReceiver("João","joao@gmail.com","3333-1222","H8A 112");
+		director.setDate(15,10,2016);
+		//System.out.println(director.printLetter());
+		assertEquals(inviteResult,director.printLetter());
+		
+		LetterDirector diretor = new LetterDirector("WeddingInviteLetter","portuguese");
+		diretor.addSender("Maria","maria@mail.com","9999-0000","H9C 402");
+		diretor.addRelatives("Paulo","João","Marta","Marcos","Joana");
+		diretor.addReceiver("João","joao@gmail.com","3333-1222","H8A 112");
+		diretor.setDate(15,10,2016);
+		//System.out.println(diretor.printLetter());
+		assertEquals(inviteResultPT,diretor.printLetter());
+    }
 }

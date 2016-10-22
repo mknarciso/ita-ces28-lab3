@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class MergeTests {
+public class LetterDirectorTests {
 	
     String content = "Here goes all the content of the letter. It doesn`t matter the language its written.";
 

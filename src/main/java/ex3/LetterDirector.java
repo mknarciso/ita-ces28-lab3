@@ -2,10 +2,17 @@ package ex3;
 
 public class LetterDirector {
 	private IdiomFactory idiomFactory_;
-	private ComercialLetter letter;
+	private LetterBuilder letter;
 	public LetterDirector(String type, String idiom) {
 		idiomFactory_ = FactoryMaker.getFactory(idiom);	
-		letter = new ComercialLetter();
+        if(type=="ComercialLetter"){
+        	letter = new ComercialLetter();
+        } else if(type=="LoveLetter"){
+        	letter = new LoveLetter();
+        }else{
+        	System.out.println("Tipo de Carta inválida!");
+        }
+		
 	}
 	public void addSender(String name, String email, String phone, String addr) {
 		letter.addSender(
@@ -31,6 +38,9 @@ public class LetterDirector {
 
 	public String printLetter() {
 		return letter.model();
+	}
+	public void addCity(String city) {
+		letter.addCity(city);	
 	}
 
 

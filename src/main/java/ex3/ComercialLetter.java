@@ -39,4 +39,8 @@ class ComercialLetter extends Letter implements LetterBuilder{
     	destinatary_ = receiver;
     	addressDestiny_ = receiverAddr;
     }
+	public void addCity(String city) {
+		System.out.println("Não é previsto inserir cidade em ComercialLetter");
+		
+	}
 }

@@ -3,15 +3,6 @@ package ex4;
 import static org.junit.Assert.*;
 import org.junit.*;
 
-import ex4.Address;
-import ex4.ComercialLetter;
-import ex4.Date;
-import ex4.LoveLetter;
-import ex4.Person;
-import ex4.PortugueseAddress;
-import ex4.PortugueseDate;
-import ex4.PortuguesePerson;
-import ex4.WeddingInviteLetter;
 
 
 public class BuilderTest {

@@ -4,11 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import ex4.Address;
-import ex4.Date;
-import ex4.FactoryMaker;
-import ex4.IdiomFactory;
-import ex4.Person;
+
 
 public class FactoryTests {
 	IdiomFactory idiomFactory_;

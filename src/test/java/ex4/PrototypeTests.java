@@ -5,11 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import ex4.EnglishDoctorPerson;
-import ex4.FactoryMaker;
-import ex4.IdiomFactory;
-import ex4.NewPortuguesePhone;
-import ex4.Person;
 
 public class PrototypeTests {
 

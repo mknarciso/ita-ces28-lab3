@@ -9,7 +9,12 @@ public class EnglishDoctorPerson extends Person {
 	public Person generatePerson(String name, String email, String phone) {
 		name_ = "Dr " + name;
 		email_ = email + " and " + name + "@university.edu";
-		phoneNumber_ = phoneNumberPrototype_.generatePhone(phone);
+		try {
+			phoneNumber_ = (PhoneNumber) phoneNumberPrototype_.generatePhone(phone).clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this;
 	}
 	

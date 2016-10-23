@@ -11,6 +11,12 @@ public class LetterDirector {
         	letter = new LoveLetter();
         } else if(type=="WeddingInviteLetter"){
         	letter = new WeddingInviteLetter();
+        }else if(type=="ComercialLetterBR"){
+        	letter = new ComercialLetterBR();
+        }else if(type=="LoveLetterBR"){
+        	letter = new LoveLetterBR();
+        } else if(type=="WeddingInviteLetterBR"){
+        	letter = new WeddingInviteLetterBR();
         }else{
         	System.out.println("Tipo de Carta inválida!");
         }

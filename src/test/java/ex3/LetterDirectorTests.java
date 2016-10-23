@@ -32,6 +32,7 @@ public class LetterDirectorTests {
 		//System.out.println(diretor.printLetter());
 		assertEquals(comercialResultUSPT,diretor.printLetter());
     }
+
     @Test
     public void LoveLetterWithIdiom(){
         String loveResult = "São José dos Campos, 10/15/2016\n\nDear Mr Marcos,\n" + content + "\n\nWith love,\n" + 
@@ -82,6 +83,84 @@ public class LetterDirectorTests {
 		diretor.addReceiver("João","joao@gmail.com","3333-1222","H8A 112");
 		diretor.setDate(15,10,2016);
 		//System.out.println(diretor.printLetter());
+		assertEquals(inviteResultPT,diretor.printLetter());
+    }
+    
+    @Test
+    public void ComercialLetterBRWithIdiom(){
+        String comercialResultBR = "10/15/2016\n\nRemetente: \n  João\n  Street H9C 402\nDestinatário: \n  Marcos\n  Street H8A 112\n\nCaro Mr Marcos,\n" + 
+        content + "\n\nAtenciosamente,\n\n\n __________________\n João\n 3333-1222\n email:" + "joao@gmail.com";
+	    String comercialResultBRPT = "15/10/2016\n\nRemetente: \n  João\n  Rua H9C 402\nDestinatário: \n  Marcos\n  Rua H8A 112\n\nCaro Sr Marcos,\n" + 
+  	    content + "\n\nAtenciosamente,\n\n\n __________________\n João\n 3333-1222\n email:" + "joao@gmail.com";
+		
+	    
+	    LetterDirector director = new LetterDirector("ComercialLetterBR","english");
+		director.addSender("João","joao@gmail.com","3333-1222","H9C 402");
+		director.addReceiver("Marcos","marcos@gmail.com","9999-1222","H8A 112");
+		director.addContent(content);
+		director.setDate(15,10,2016);
+		//System.out.println(director.printLetter());
+		assertEquals(comercialResultBR,director.printLetter());
+		
+		LetterDirector diretor = new LetterDirector("ComercialLetterBR","portuguese");
+		diretor.addSender("João","joao@gmail.com","3333-1222","H9C 402");
+		diretor.addReceiver("Marcos","marcos@gmail.com","9999-1222","H8A 112");
+		diretor.addContent(content);
+		diretor.setDate(15,10,2016);
+		//System.out.println(diretor.printLetter());
+		assertEquals(comercialResultBRPT,diretor.printLetter());
+    }
+
+    @Test
+    public void LoveLetterBRWithIdiom(){
+        String loveResult = "São José dos Campos, 10/15/2016\n\nQuerido Mr Marcos,\n" + content + "\n\nAbraços,\n" + 
+        	    "\n           João";
+	    String loveResultPT = "São José dos Campos, 15/10/2016\n\nQuerido Sr Marcos,\n" + content + "\n\nAbraços,\n" + 
+        	    "\n           João";
+		
+	    
+	    LetterDirector director = new LetterDirector("LoveLetterBR","english");
+		director.addSender("João","joao@gmail.com","3333-1222","");
+		director.addReceiver("Marcos","marcos@gmail.com","9999-1222","");
+		director.addCity("São José dos Campos");
+		director.addContent(content);
+		director.setDate(15,10,2016);
+		//System.out.println(director.printLetter());
+		assertEquals(loveResult,director.printLetter());
+		
+		LetterDirector diretor = new LetterDirector("LoveLetterBR","portuguese");
+		diretor.addSender("João","joao@gmail.com","3333-1222","");
+		diretor.addReceiver("Marcos","marcos@gmail.com","9999-1222","");
+		diretor.addCity("São José dos Campos");
+		diretor.addContent(content);
+		diretor.setDate(15,10,2016);
+		//System.out.println(diretor.printLetter());
+		assertEquals(loveResultPT,diretor.printLetter());
+    }
+    @Test
+    public void WeddingInviteLetterBRWithIdiom(){
+        String inviteResult = "Para:\n  Mr João\n  Street H8A 112\n\nTemos a honra de convidá-lo para o casamento de nossos filhos\n"
+        	    + "  Maria & Paulo\n\n A cerimônia ocorrerá na \nStreet H9C 402 em 10/15/2016\n\n"
+        	    + "Por favor confirme presença:9999-0000\n\n __________________\n João, Marta, Marcos and Joana.";
+	    String inviteResultPT = "Para:\n  Sr João\n  Rua H8A 112\n\nTemos a honra de convidá-lo para o casamento de nossos filhos\n"
+	    	    + "  Maria & Paulo\n\n A cerimônia ocorrerá na \nRua H9C 402 em 15/10/2016\n\n"
+	    	    + "Por favor confirme presença:9999-0000\n\n __________________\n João, Marta, Marcos and Joana.";
+	
+ 
+	    LetterDirector director = new LetterDirector("WeddingInviteLetterBR","english");
+		director.addSender("Maria","maria@mail.com","9999-0000","H9C 402");
+		director.addRelatives("Paulo","João","Marta","Marcos","Joana");
+		director.addReceiver("João","joao@gmail.com","3333-1222","H8A 112");
+		director.setDate(15,10,2016);
+		//System.out.println(director.printLetter());
+		assertEquals(inviteResult,director.printLetter());
+		
+		LetterDirector diretor = new LetterDirector("WeddingInviteLetterBR","portuguese");
+		diretor.addSender("Maria","maria@mail.com","9999-0000","H9C 402");
+		diretor.addRelatives("Paulo","João","Marta","Marcos","Joana");
+		diretor.addReceiver("João","joao@gmail.com","3333-1222","H8A 112");
+		diretor.setDate(15,10,2016);
+		System.out.println(diretor.printLetter());
 		assertEquals(inviteResultPT,diretor.printLetter());
     }
 }
